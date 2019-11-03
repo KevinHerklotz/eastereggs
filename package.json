@@ -2,7 +2,7 @@
   "name": "eastereggs",
   "version": "0.1.0",
   "description": "funny easter egg library for your website",
-  "main": "dist/eastereggs.js",
+  "main": "build/eastereggs.js",
   "scripts": {
     "start": "webpack-dev-server --open --config=config/webpack.dev.config.js",
     "build": "webpack --config=config/webpack.prod.config.js"
