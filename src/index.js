@@ -1,7 +1,7 @@
-import unicorncursor from './eastereggs/unicorncursor'
+import unicornCursor from './eastereggs2/unicornCursor'
 
 const eastereggs = {
-  unicorncursor,
+  unicornCursor,
 }
 
 export default eastereggs
