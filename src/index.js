@@ -1,7 +1,5 @@
-const hello = () => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => resolve('Hello Worlsd'), 1000)
-  })
-}
+import unicorncursor from './eastereggs/unicorncursor'
 
-hello().then(value => console.log(value))
+export default {
+  unicorncursor,
+}
