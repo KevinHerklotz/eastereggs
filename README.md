@@ -9,7 +9,7 @@ Notice that it is still in development.
 
 ## Demo
 
-Click [here](https://rawgit.com/KevinHerklotz/easteregg/master/build/demo.html) to see a demo page.
+Click [here](https://kevinherklotz.github.io/eastereggs/build/demo.html) to see a demo page.
 
 ## Install
 

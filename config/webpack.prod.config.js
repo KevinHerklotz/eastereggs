@@ -76,7 +76,7 @@ module.exports = {
     // The plugin will generate an HTML5 file for you that includes all your webpack bundles in the body using script tags
     new HtmlWebpackPlugin({
       template: './src/demo/index.html',
-      filename: 'index.html',
+      filename: 'demo.html',
     }),
     // This plugin will extract all css to one file
     new MiniCssExtractPlugin({
