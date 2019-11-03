@@ -1,4 +1,4 @@
 import ClassSetter from '../../common/ClassSetter.js'
 import './style.scss'
 
-export default new ClassSetter('eastereck-unicorncursor')
+export default new ClassSetter('easteregg-unicorncursor')

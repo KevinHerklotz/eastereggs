@@ -13,7 +13,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, '../build'),
-    filename: '[name].[chunkhash:8].bundle.js',
+    filename: 'eastereggs.js',
     chunkFilename: '[name].[chunkhash:8].chunk.js',
   },
   mode: 'production',
@@ -75,7 +75,7 @@ module.exports = {
     new CleanWebpackPlugin({}),
     // The plugin will generate an HTML5 file for you that includes all your webpack bundles in the body using script tags
     new HtmlWebpackPlugin({
-      template: './src/index.html',
+      template: './src/demo/index.html',
       filename: 'index.html',
     }),
     // This plugin will extract all css to one file
