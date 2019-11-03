@@ -1,4 +1,4 @@
-import unicornCursor from './eastereggs2/unicornCursor'
+import unicornCursor from './eastereggs/unicornCursor'
 
 const eastereggs = {
   unicornCursor,

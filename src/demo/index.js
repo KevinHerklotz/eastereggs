@@ -1,3 +1,3 @@
-import eastereggs from '../eastereggs2'
+import eastereggs from '../eastereggs'
 
 window.eastereggs = eastereggs
