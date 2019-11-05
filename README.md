@@ -23,9 +23,6 @@ import { unicornCursor, meteor } from 'eastereggs'
 // To start it
 unicornCursor.start();
 
-// Some eastereggs have optional options
-unicornCursor.start(options);
-
 // To stop it
 unicornCursor.stop();
 ```

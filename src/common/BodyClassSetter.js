@@ -1,4 +1,4 @@
-export default class ClassSetter {
+export default class PonyClassSetter {
   constructor(className) {
     this.className = className
   }
