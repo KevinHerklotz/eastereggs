@@ -2,13 +2,17 @@ import './style.scss'
 
 class IconParty {
   constructor() {
-    this.iconQuerySelector // = '.fa, .material-icons, .glyphicon, .icon, .octicon, .mega-octicon, .typcn'
+    this.iconQuerySelector
+    this.timeout
 
     this.iconPartyClassPrefix = `eeIconparty-`
     this.iconPartyClassSuffixes = ['jump', 'rotate', 'dance']
   }
 
-  start(iconQuerySelector) {
+  start(iconQuerySelector, duration) {
+    if (!iconQuerySelector) {
+      console.log('iconParty.start() needs a queryselector as first argument')
+    }
     this.iconQuerySelector = iconQuerySelector
 
     const iconElements = Array.from(document.querySelectorAll(this.iconQuerySelector))
@@ -22,6 +26,13 @@ class IconParty {
       if (index >= this.iconPartyClassSuffixes.length) {
         index = 0
       }
+    }
+
+    clearTimeout(this.timeout)
+    if (duration !== 0) {
+      this.timeout = setTimeout(() => {
+        this.stop()
+      }, 5000 || duration)
     }
   }
 
