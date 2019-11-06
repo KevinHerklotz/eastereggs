@@ -1,0 +1,40 @@
+$meteorSize: 150px;
+$speed: 700ms;
+$zIndex: 100000;
+$distanceFromTop: 5vw;
+
+@keyframes move {
+  0% {
+    right: -$meteorSize * 1.2;
+    top: $distanceFromTop;
+  }
+  100% {
+    right: 120vw;
+    top: $distanceFromTop + 45vw;
+  }
+}
+
+.eastereggMeteor {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: $zIndex;
+  pointer-events: none;
+
+  &:after {
+    width: $meteorSize;
+    height: $meteorSize;
+    content: '';
+    right: 1000vw;
+    position: absolute;
+    animation-name: move;
+    animation-duration: $speed;
+    animation-timing-function: linear;
+    // Source of the unicorn http://www.publicdomainfiles.com/show_file.php?id=13954010418913
+    background: url('./meteor.png');
+    background-repeat: no-repeat;
+    background-size: $meteorSize;
+  }
+}

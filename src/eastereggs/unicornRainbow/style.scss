@@ -1,6 +1,6 @@
-$rainbowWidth: 2vw;
-$rainbowDuration: 1000ms;
-$unicornDuration: 7000ms;
+$rainbowWidth: 20px;
+$rainbowDuration: 1000ms; // if you change durations, please also change timeout in js file
+$unicornDuration: 7000ms; // if you change durations, please also change timeout in js file
 $unicornJumpHeight: 100px;
 $unicornSize: 150px;
 $distanceFromTop: 50vh;
@@ -15,7 +15,7 @@ $zIndex: 100000;
   }
 }
 
-.rainbowWrapper {
+.eeRainbowWrapper {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -60,7 +60,7 @@ $zIndex: 100000;
   }
 }
 
-.unicorn {
+.eeUnicorn {
   position: fixed;
   top: $distanceFromTop;
   width: 20px;
