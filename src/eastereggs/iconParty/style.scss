@@ -1,0 +1,55 @@
+.eeIconparty-jump {
+  animation: jump 250ms ease infinite alternate;
+}
+.eeIconparty-rotate {
+  animation: rotate 900ms linear infinite;
+}
+.eeIconparty-dance {
+  animation: dance 2000ms linear infinite;
+}
+
+@keyframes jump {
+  0% {
+    transform: translate(0, -0.4em);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes dance {
+  0% {
+    transform: rotate(0deg);
+  }
+  5% {
+    transform: rotate(10deg);
+  }
+  15% {
+    transform: rotate(-10deg);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  35% {
+    transform: rotate(-10deg);
+  }
+  45% {
+    transform: rotate(10deg);
+  }
+  55% {
+    transform: rotate(-10deg) translate(0);
+  }
+  70% {
+    transform: rotate(30deg) translate(0.1em, -0.2em);
+  }
+  80% {
+    transform: rotate(0deg) translate(0, 0);
+  }
+  90% {
+    transform: rotate(-30deg) translate(-0.1em, -0.2em);
+  }
+  100% {
+    transform: rotate(0deg) translate(0);
+  }
+}

@@ -24,4 +24,5 @@ class Meteor {
     })
   }
 }
+
 export default new Meteor()
