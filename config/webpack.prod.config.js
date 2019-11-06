@@ -1,7 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserJSPlugin = require('terser-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const PurgecssPlugin = require('purgecss-webpack-plugin')
@@ -31,12 +30,10 @@ module.exports = {
           },
         ],
       },
-    ],
-    rules: [
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
-          MiniCssExtractPlugin.loader,
+          'style-loader', // 4. injects style into DOM
           'css-loader', // 3. Turns CSS into CommonJs
           'postcss-loader', // 2. Converts modern CSS into something most browsers can understand & minifies code
           'sass-loader', // 1. Turns SCSS into CSS
@@ -77,11 +74,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/demo/index.html',
       filename: 'demo.html',
-    }),
-    // This plugin will extract all css to one file
-    new MiniCssExtractPlugin({
-      filename: '[name].[chunkhash:8].bundle.css',
-      chunkFilename: '[name].[chunkhash:8].chunk.css',
     }),
     new PurgecssPlugin({
       paths: glob.sync(path.resolve(__dirname, '../src/**/*'), { nodir: true }),
