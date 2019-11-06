@@ -11,5 +11,3 @@ const eastereggs = {
 }
 
 export default eastereggs
-
-window.eastereggs = eastereggs
