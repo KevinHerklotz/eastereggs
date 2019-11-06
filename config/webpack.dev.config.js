@@ -27,12 +27,10 @@ module.exports = {
           loader: 'babel-loader',
         },
       },
-    ],
-    rules: [
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
-          'style-loader', // 4. Injects style to DOM
+          'style-loader', // 4. Injects style into DOM
           'css-loader', // 3. Turns CSS into CommonJs
           'postcss-loader', // 2. Converts modern CSS into something most browsers can understand & minifies code
           'sass-loader', // 1. Turns SCSS into CSS
