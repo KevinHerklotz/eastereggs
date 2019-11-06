@@ -84,7 +84,6 @@ $zIndex: 100000;
     animation-iteration-count: infinite;
     animation-direction: alternate;
     animation-duration: $unicornDuration/15; // jumps 10 times
-    transform: scaleX(-1);
     // Source of the unicorn https://www.maxpixel.net/Animal-Unicorn-Fluffy-Cute-Blue-Pony-Clipart-Pet-2128415
     background: url('./unicorn.png');
     background-repeat: no-repeat;
