@@ -1,0 +1,93 @@
+$rainbowWidth: 2vw;
+$rainbowDuration: 1000ms;
+$unicornDuration: 7000ms;
+$unicornJumpHeight: 100px;
+$unicornSize: 150px;
+$distanceFromTop: 50vh;
+$zIndex: 100000;
+
+@keyframes moveRight {
+  0% {
+    right: 100vw;
+  }
+  100% {
+    right: -10vw;
+  }
+}
+
+.rainbowWrapper {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: $zIndex;
+  animation: moveRight $rainbowDuration linear;
+  overflow: hidden;
+  pointer-events: none;
+
+  &:before {
+    position: absolute;
+    opacity: 0.3;
+    content: '';
+    width: 135vw;
+    height: 100vh;
+    top: $distanceFromTop;
+    left: -7vw;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    box-shadow: 0 0 0 ($rainbowWidth * 1) #4200ab, 0 0 0 ($rainbowWidth * 2) #000095,
+      0 0 0 ($rainbowWidth * 3) #00abff, 0 0 0 ($rainbowWidth * 4) #00c800, 0 0 0 ($rainbowWidth * 5) #fff800,
+      0 0 0 ($rainbowWidth * 6) #ff7642, 0 0 0 ($rainbowWidth * 7) #e40000;
+  }
+}
+
+@keyframes upAndDown {
+  0% {
+    top: ($distanceFromTop + 10);
+  }
+  100% {
+    top: ($distanceFromTop - 15);
+  }
+}
+
+@keyframes jump {
+  0% {
+    margin-bottom: 0;
+  }
+  100% {
+    margin-bottom: $unicornJumpHeight;
+  }
+}
+
+.unicorn {
+  position: fixed;
+  top: $distanceFromTop;
+  width: 20px;
+  height: 20px;
+  right: -10vw;
+  animation-name: moveRight, upAndDown;
+  animation-delay: $rainbowDuration, ($rainbowDuration - ($unicornDuration/7));
+  animation-iteration-count: 1, 2;
+  animation-direction: normal, alternate;
+  animation-duration: $unicornDuration, ($unicornDuration/1.4);
+  animation-timing-function: linear, ease-in-out;
+
+  &:after {
+    width: $unicornSize;
+    height: $unicornSize;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation-name: jump;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: $unicornDuration/15; // jumps 10 times
+    transform: scaleX(-1);
+    // Source of the unicorn https://www.maxpixel.net/Animal-Unicorn-Fluffy-Cute-Blue-Pony-Clipart-Pet-2128415
+    background: url('./unicorn.png');
+    background-repeat: no-repeat;
+    background-size: $unicornSize $unicornSize;
+  }
+}
