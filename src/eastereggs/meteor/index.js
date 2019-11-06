@@ -2,7 +2,6 @@ import './style.scss'
 
 class Meteor {
   constructor() {
-    this.timeout
     this.classname = 'eastereggMeteor'
     this.meteor = document.createElement('div')
     this.meteor.classList.add('eastereggMeteor')

@@ -2,15 +2,13 @@ import './style.scss'
 
 class IconParty {
   constructor() {
-    this.iconQuerySelector
-    this.timeout
-
-    this.iconPartyClassPrefix = `eeIconparty-`
+    this.iconPartyClassPrefix = 'eeIconparty-'
     this.iconPartyClassSuffixes = ['jump', 'rotate', 'dance']
   }
 
   start(iconQuerySelector, duration) {
     if (!iconQuerySelector) {
+      // eslint-disable-next-line no-console
       console.log('iconParty.start() needs a queryselector as first argument')
     }
     this.iconQuerySelector = iconQuerySelector
@@ -20,6 +18,7 @@ class IconParty {
     let index = 0
 
     for (const iconElement of iconElements) {
+      // eslint-disable-next-line no-plusplus
       iconElement.classList.add(`${this.iconPartyClassPrefix}${this.iconPartyClassSuffixes[index++]}`)
 
       // reset index to begin with the first suffix again

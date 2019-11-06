@@ -2,7 +2,6 @@ import './style.scss'
 
 class UnicornRainbow {
   constructor() {
-    this.timeout
     this.classname = 'eeRainbowWrapper'
     this.unicornWrapper = document.createElement('div')
     this.unicornWrapper.classList.add(this.classname)

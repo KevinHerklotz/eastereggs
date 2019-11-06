@@ -1,4 +1,4 @@
-import BodyClassSetter from '../../common/BodyClassSetter.js'
+import BodyClassSetter from '../../common/BodyClassSetter'
 import './style.scss'
 
 export default new BodyClassSetter('eeUnicornCursor')
