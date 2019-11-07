@@ -1,10 +1,10 @@
 const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const TerserJSPlugin = require('terser-webpack-plugin')
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-const PurgecssPlugin = require('purgecss-webpack-plugin')
-const glob = require('glob')
+// const HtmlWebpackPlugin = require('html-webpack-plugin')
+// const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+// const TerserJSPlugin = require('terser-webpack-plugin')
+// const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+// const PurgecssPlugin = require('purgecss-webpack-plugin')
+// const glob = require('glob')
 
 module.exports = {
   entry: {
@@ -13,7 +13,10 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, '../build'),
     filename: 'eastereggs.js',
-    chunkFilename: '[name].[chunkhash:8].chunk.js',
+    // chunkFilename: '[name].[chunkhash:8].chunk.js',
+    library: 'eastereggs',
+    libraryTarget: 'umd',
+    globalObject: 'this',
   },
   mode: 'production',
   module: {
@@ -50,32 +53,32 @@ module.exports = {
           },
         ],
       },
-      {
-        test: /\.html$/,
-        use: {
-          loader: 'html-loader',
-          options: {
-            attrs: ['img:src', ':data-src'],
-            minimize: true,
-          },
-        },
-      },
+      // {
+      //   test: /\.html$/,
+      //   use: {
+      //     loader: 'html-loader',
+      //     options: {
+      //       attrs: ['img:src', ':data-src'],
+      //       minimize: true,
+      //     },
+      //   },
+      // },
     ],
   },
-  optimization: {
-    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
-  },
-  plugins: [
-    // CleanWebpackPlugin will do some clean up/remove folder before build
-    // In this case, this plugin will remove 'dist' and 'build' folder before re-build again
-    new CleanWebpackPlugin({}),
-    // The plugin will generate an HTML5 file for you that includes all your webpack bundles in the body using script tags
-    new HtmlWebpackPlugin({
-      template: './src/demo/index.html',
-      filename: 'demo.html',
-    }),
-    new PurgecssPlugin({
-      paths: glob.sync(path.resolve(__dirname, '../src/**/*'), { nodir: true }),
-    }),
-  ],
+  // optimization: {
+  //   minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
+  // },
+  // plugins: [
+  //   // CleanWebpackPlugin will do some clean up/remove folder before build
+  //   // In this case, this plugin will remove 'dist' and 'build' folder before re-build again
+  //   // new CleanWebpackPlugin({}),
+  //   // The plugin will generate an HTML5 file for you that includes all your webpack bundles in the body using script tags
+  //   // new HtmlWebpackPlugin({
+  //   //   template: './src/demo/index.html',
+  //   //   filename: 'demo.html',
+  //   // }),
+  //   new PurgecssPlugin({
+  //     paths: glob.sync(path.resolve(__dirname, '../src/**/*'), { nodir: true }),
+  //   }),
+  // ],
 }
