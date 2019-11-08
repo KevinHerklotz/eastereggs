@@ -1,6 +1,6 @@
 {
   "name": "eastereggs",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "funny easter egg library for your website",
   "main": "build/eastereggs.js",
   "scripts": {

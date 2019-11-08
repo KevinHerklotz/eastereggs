@@ -3,15 +3,15 @@ import './style.scss'
 class UnicornRainbow {
   constructor() {
     this.classname = 'eeRainbowWrapper'
-    this.unicornWrapper = document.createElement('div')
-    this.unicornWrapper.classList.add(this.classname)
-    const unicorn = document.createElement('div')
-    this.unicornWrapper.appendChild(unicorn)
-    unicorn.classList.add('eeUnicorn')
   }
 
   start() {
-    document.body.appendChild(this.unicornWrapper)
+    const unicornWrapper = document.createElement('div')
+    unicornWrapper.classList.add(this.classname)
+    const unicorn = document.createElement('div')
+    unicornWrapper.appendChild(unicorn)
+    unicorn.classList.add('eeUnicorn')
+    document.body.appendChild(unicornWrapper)
 
     clearTimeout(this.timeout)
     this.timeout = setTimeout(() => {
@@ -26,4 +26,5 @@ class UnicornRainbow {
     })
   }
 }
+
 export default new UnicornRainbow()

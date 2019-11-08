@@ -1,5 +1,5 @@
 const path = require('path')
-// const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 // const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 // const TerserJSPlugin = require('terser-webpack-plugin')
 // const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
@@ -13,7 +13,6 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, '../build'),
     filename: 'eastereggs.js',
-    // chunkFilename: '[name].[chunkhash:8].chunk.js',
     library: 'eastereggs',
     libraryTarget: 'umd',
     globalObject: 'this',
@@ -68,17 +67,17 @@ module.exports = {
   // optimization: {
   //   minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
   // },
-  // plugins: [
-  //   // CleanWebpackPlugin will do some clean up/remove folder before build
-  //   // In this case, this plugin will remove 'dist' and 'build' folder before re-build again
-  //   // new CleanWebpackPlugin({}),
-  //   // The plugin will generate an HTML5 file for you that includes all your webpack bundles in the body using script tags
-  //   // new HtmlWebpackPlugin({
-  //   //   template: './src/demo/index.html',
-  //   //   filename: 'demo.html',
-  //   // }),
-  //   new PurgecssPlugin({
-  //     paths: glob.sync(path.resolve(__dirname, '../src/**/*'), { nodir: true }),
-  //   }),
-  // ],
+  plugins: [
+    // CleanWebpackPlugin will do some clean up/remove folder before build
+    // In this case, this plugin will remove 'dist' and 'build' folder before re-build again
+    // new CleanWebpackPlugin({}),
+    // The plugin will generate an HTML5 file for you that includes all your webpack bundles in the body using script tags
+    new HtmlWebpackPlugin({
+      template: './src/demo/index.html',
+      filename: 'demo.html',
+    }),
+    // new PurgecssPlugin({
+    //   paths: glob.sync(path.resolve(__dirname, '../src/**/*'), { nodir: true }),
+    // }),
+  ],
 }

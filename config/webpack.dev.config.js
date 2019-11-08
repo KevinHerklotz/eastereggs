@@ -9,6 +9,9 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, '../build'),
     filename: '[name].bundle.js',
+    library: 'eastereggs',
+    libraryTarget: 'umd',
+    globalObject: 'this',
   },
   mode: 'development',
   devServer: {

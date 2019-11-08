@@ -3,12 +3,12 @@ import './style.scss'
 class Meteor {
   constructor() {
     this.classname = 'eastereggMeteor'
-    this.meteor = document.createElement('div')
-    this.meteor.classList.add('eastereggMeteor')
   }
 
   start() {
-    document.body.appendChild(this.meteor)
+    const meteor = document.createElement('div')
+    meteor.classList.add(this.classname)
+    document.body.appendChild(meteor)
 
     clearTimeout(this.timeout)
     this.timeout = setTimeout(() => {
